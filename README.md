@@ -1,15 +1,19 @@
-# QuickConverter
+# QuickConverter (dotnet core)
 QuickConverter provides you with WPF markup that allows you to write inline converters, multi-bindings, and event handlers using a C# like language directly in your xaml.
 
 Even though QuickConverter compiles converter expressions at runtime, its use introduces very little overhead. QuickConverter takes advantage of expression trees and caching to make compilation of dynamically parsed expressions very efficient. 
 
-QuickConverter is also available on NuGet.
+QuickConverter is also available on NuGet. (but not for dotnet core)
 
 Quick Setup Steps
 -----------------
 
-1.  Add the assembly reference to your project. This can also easily be done using [the NuGet package](http://www.nuget.org/packages/QuickConverter/).
-2.  Add the namespaces to Quick Converter that it will need to know about (before any xaml that uses it is loaded).  
+1.  Clone the repository.
+1.  Add the project reference to your project, i.e.:
+    ```xml
+    <ProjectReference Include="../QuickConverter/QuickConverter.csproj" />
+    ```
+1.  Add the namespaces to Quick Converter that it will need to know about (before any xaml that uses it is loaded).  
     e.g. In your WPF application's App.xaml.cs file:  
     
 ```csharp
@@ -28,8 +32,8 @@ Quick Setup Steps
 
 3.  Add the Quick Converter namespace to your xaml files so you can reference it.  
 
-```
-xmlns:qc="http://QuickConverter.CodePlex.com/"
+```cs
+xmlns:qc="clr-namespace:QuickConverter;assembly=QuickConverter" 
 ```
     
 
